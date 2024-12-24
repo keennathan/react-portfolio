@@ -1,40 +1,57 @@
 import React from "react";
-
-const handleScroll = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-    }   
-};
+import { Link as ScrollLink } from "react-scroll";
 
 const Navbar = () => {
     return (
         <nav className="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
-            <ul className="nav">
+            <div className="container">
                 <div className="navbar-brand ms-3">
-                    Nathan Keen, Graduate Fullstack Developer
+                    Nathan Keen,<br /> 
+                    Graduate Fullstack Developer
                 </div>
-                <li className="nav-item">
-                    <button type="button" className="nav-link btn btn-secondary btn-lg" onClick={() => handleScroll("home")}>
-                        Home
-                    </button>
-                </li>
-                <li className="nav-item">
-                    <button type="button" className="nav-link btn btn-secondary" onClick={() => handleScroll("about")}>
-                        About
-                    </button>
-                </li>
-                <li className="nav-item">
-                    <button type="button" className="nav-link btn btn-secondary" onClick={() => handleScroll("projects")}>
-                        Projects
-                    </button>
-                </li>
-                <li className="nav-item">
-                    <button type="button" className="nav-link btn btn-secondary" onClick={() => handleScroll("contact")}>
-                        Contact
-                    </button>
-                </li>
-            </ul>
+                <ul className="nav mx-auto">
+                    <li className="nav-item">
+                        <ScrollLink 
+                            to="home" 
+                            smooth={true} 
+                            duration={500} 
+                            className="nav-link btn btn-secondary btn-lg"
+                        >
+                            Home
+                        </ScrollLink>
+                    </li>
+                    <li className="nav-item">
+                        <ScrollLink 
+                            to="about" 
+                            smooth={true} 
+                            duration={500} 
+                            className="nav-link btn btn-secondary"
+                        >
+                            About
+                        </ScrollLink>
+                    </li>
+                    <li className="nav-item">
+                        <ScrollLink 
+                            to="projects" 
+                            smooth={true} 
+                            duration={500} 
+                            className="nav-link btn btn-secondary"
+                        >
+                            Projects
+                        </ScrollLink>
+                    </li>
+                    <li className="nav-item">
+                        <ScrollLink 
+                            to="contact" 
+                            smooth={true} 
+                            duration={500} 
+                            className="nav-link btn btn-secondary"
+                        >
+                            Contact
+                        </ScrollLink>
+                    </li>
+                </ul>
+            </div>
         </nav>
     );
 };
