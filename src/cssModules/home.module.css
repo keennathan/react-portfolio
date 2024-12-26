@@ -1,0 +1,63 @@
+.profileImage {
+  width: 15rem; /* Make the image take up the full width of its container */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%;
+  margin-bottom: 1rem; /* Add some space below the image */
+  vertical-align: middle;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column; /* Default to column for small screens */
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 5rem;
+  border-radius: 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  width: 90%;
+  max-width: 800px;
+  margin: 4rem auto;
+  height: 39rem;
+}
+
+.textContainer {
+  flex: 1; /* Each container takes up 50% of the parent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure the text container has a fixed height */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.imageContainer {
+  flex: 1; /* Each container takes up 50% of the parent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure the image container has a fixed height */
+}
+
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row; /* Change to row for larger screens */
+    padding: 3rem;
+    width: 42rem;
+  }
+
+  .profileImage {
+    margin-bottom: 0; /* Remove bottom margin for larger screens */
+    margin-right: 1rem; /* Add some space to the right of the image */
+  }
+}
+
+@media (min-width: 1024px) {
+  .content {
+    padding: 5rem;
+  }
+}

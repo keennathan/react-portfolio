@@ -3,7 +3,7 @@ import { Link as ScrollLink } from "react-scroll";
 
 const Navbar = () => {
     return (
-        <nav className="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+        <nav className="navbar border-bottom border-body" data-bs-theme="dark">
             <div className="container">
                 <div className="navbar-brand ms-3">
                     Nathan Keen,<br /> 
