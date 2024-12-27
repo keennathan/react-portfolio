@@ -1,9 +1,20 @@
 .profileImage {
   width: 15rem; /* Make the image take up the full width of its container */
   height: auto; /* Maintain aspect ratio */
+  border: 1px solid white;
   border-radius: 50%;
   margin-bottom: 1rem; /* Add some space below the image */
   vertical-align: middle;
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .content {
@@ -15,14 +26,14 @@
   color: white;
   text-align: center;
   margin-top: 2rem;
-  padding: 5rem;
+  padding: auto;
   border-radius: 2rem;
   border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   backdrop-filter: blur(10px); /* Blur effect */
   width: 90%;
   max-width: 800px;
-  margin: 4rem auto;
+  margin: 6rem 1rem;
   height: 39rem;
 }
 
@@ -36,11 +47,13 @@
 }
 
 .imageContainer {
+  padding-top: 3rem;
   flex: 1; /* Each container takes up 50% of the parent */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%; /* Ensure the image container has a fixed height */
+  animation: slideInFromLeft 2s ease-out; /* Apply the animation */
 }
 
 @media (min-width: 768px) {
