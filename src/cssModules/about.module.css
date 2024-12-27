@@ -17,14 +17,62 @@
     margin: 1rem;
     height: auto;
   }
+  @keyframes moveBanner {
+    0% {
+        transform: translateX(-30%);
+    }
+    50% {
+        transform: translateX(30%);
+    }
+    100% {
+        transform: translateX(-30%);
+    }
+    }
+.banner{
+    padding-top: 1.5rem;
+    animation: moveBanner 10s linear infinite;
+    white-space: nowrap; /* Prevent text from wrapping */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
 .content{
     padding: 1rem .5rem 1rem;
 }
-.introduction{
-    padding: 1rem;
+.introduction {
+    padding-top: 3rem;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
+.skills {
+    padding-top: 3rem;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.moreAboutMe {
+    padding-top: 3rem;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.introduction.visible,
+.skills.visible,
+.moreAboutMe.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .aboutImage{
     width: 100%;
     height: auto;
     border-radius: 1rem;
+    transition: filter 0.5s ease; /* Smooth transition for the filter effect */
+}
+.pixelated {
+    filter: blur(2px) contrast(0.5); /* Apply the pixelate effect */
 }
