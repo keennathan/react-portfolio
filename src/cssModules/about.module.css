@@ -43,21 +43,21 @@
 .introduction {
     padding-top: 3rem;
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transform: translateX(40px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 .skills {
     padding-top: 3rem;
     opacity: 0;
     transform: translateY(40px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
 .moreAboutMe {
     padding-top: 3rem;
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transform: translateX(40px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
 .introduction.visible,

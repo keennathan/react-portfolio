@@ -37,7 +37,7 @@ const About = () => {
                     <h2>Introduction:</h2>
                     <p>I'm Nathan Keen, a motivated and adaptable graduate full-stack developer with a knack for solving complex problems and creating meaningful user experiences. My journey into technology has been driven by a deep curiosity for innovation and a desire to bring ideas to life through code.</p>
                     <img className={styles.aboutImage} 
-                        src="public/assets/intro.jpeg" 
+                        src="/assets/intro.jpeg" 
                         alt="computer phones on tech background" 
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
@@ -52,7 +52,7 @@ const About = () => {
                         <li><strong>Soft Skills: </strong>Effective communicator, team collaborator, and problem solver.</li>
                     </ul>
                     <img className={styles.aboutImage} 
-                        src="/assets/AdobeStock_1104893581_resized.jpeg" 
+                        src="/assets/skills.jpeg" 
                         alt="" 
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}

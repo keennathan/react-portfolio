@@ -1,0 +1,66 @@
+.projectCard {
+    position: relative;
+    overflow: hidden;
+    transition: height 0.3s ease;
+}
+
+.projectCard img {
+    transition: transform 1s ease;
+}
+
+.projectCard:hover {
+    height: auto;
+}
+
+.projectCard:hover img {
+    transform: scale(1.1);
+    filter: blur(5px);
+}
+
+.cardBody {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    opacity: 0;
+    transition: opacity 1s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.projectCard:hover .cardBody {
+    opacity: 1;
+    position: relative; /* Make sure the content is visible */
+}
+
+@media (max-width: 768px) {
+    .projectCard {
+        height: auto; /* Initial height for mobile */
+    }
+
+    .projectCard.expanded {
+        height: auto; /* Expand to fit content when clicked */
+    }
+
+    .projectCard .cardBody {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .projectCard.expanded .cardBody {
+        opacity: 1;
+        position: relative;
+    }
+
+    .projectCard img {
+        filter: none;
+        transform: none;
+    }
+}
