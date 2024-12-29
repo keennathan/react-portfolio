@@ -11,13 +11,13 @@ const Projects = () => {
     return (
         <section id="projects" className='container'>
              <div className={styles.banner}>
-                <h2>Projects</h2>
+                <h2>Recent Projects</h2>
             </div>
             <div className="row">
             <div className="col-md-6">
                     <div 
                         className={`card mb-3 ${styles.projectCard} ${expandedCard === 2 ? styles.expanded : ""}`} 
-                        onClick={() => handleCardClick(2)}
+                        onClick={() => handleCardClick(1)}
                     >
                         <img src="/assets/gameExplorer.png" className="card-img-top" alt="Nathan's 1st portfolio" />
                         <div className={`card-body ${styles.cardBody}`}>
@@ -38,7 +38,7 @@ const Projects = () => {
                 </div>
                 <div className="col-md-6">
                     <div 
-                        className={`card mb-3 ${styles.projectCard} ${expandedCard === 1 ? styles.expanded : ""}`} 
+                        className={`card mb-3 ${styles.projectCard} ${expandedCard === 2 ? styles.expanded : ""}`} 
                         onClick={() => handleCardClick(1)}
                     >
                         <img src="/assets/loginUser.png" className="card-img-top" alt="Blogger Platform API Webserver" />
@@ -58,7 +58,7 @@ const Projects = () => {
                 <div className="col-md-6">
                     <div 
                         className={`card mb-3 ${styles.projectCard} ${expandedCard === 2 ? styles.expanded : ""}`} 
-                        onClick={() => handleCardClick(2)}
+                        onClick={() => handleCardClick(1)}
                     >
                         <img src="/assets/rugbyLeague.png" className="card-img-top" alt="Rugby League Results Tracker" />
                         <div className={`card-body ${styles.cardBody}`}>
@@ -77,7 +77,7 @@ const Projects = () => {
                 <div className="col-md-6">
                     <div 
                         className={`card mb-3 ${styles.projectCard} ${expandedCard === 2 ? styles.expanded : ""}`} 
-                        onClick={() => handleCardClick(2)}
+                        onClick={() => handleCardClick(1)}
                     >
                         <img src="/assets/portfolioBasic.png" className="card-img-top" alt="Nathan's 1st portfolio" />
                         <div className={`card-body ${styles.cardBody}`}>
