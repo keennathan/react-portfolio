@@ -1,11 +1,48 @@
+
+@keyframes moveHeading {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.banner {
+    color: white;
+    background-color: blue;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    position: relative;
+    overflow: hidden;
+}
+
+.banner h2 {
+    display: inline-block;
+    animation: moveHeading 9s linear infinite;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
 .projectCard {
     position: relative;
     overflow: hidden;
-    transition: height 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border-radius: 2rem;
 }
 
 .projectCard img {
-    transition: transform 1s ease;
+    transition: transform 2s ease;
+    height: 18rem;
 }
 
 .projectCard:hover {
@@ -14,7 +51,7 @@
 
 .projectCard:hover img {
     transform: scale(1.1);
-    filter: blur(5px);
+    filter: blur(1px);
 }
 
 .cardBody {
@@ -23,11 +60,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    backdrop-filter: blur(10px); /* Blur effect */
+    color: white;
+    border-radius: 2rem;
     opacity: 0;
-    transition: opacity 1s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
