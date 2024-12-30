@@ -1,19 +1,94 @@
 .container {
-    display: flex;
-    align-items: center;
-    flex-direction: column; /* Default to column for small screens */
-    position: relative;
-    z-index: 1;
-    color: white;
-    text-align: center;
-    margin-top: 2rem;
-    padding: 1rem;
-    border-radius: 2rem;
-    border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    backdrop-filter: blur(10px); /* Blur effect */
-    width: 100%;
-    max-width: 800px;
-    margin: 1rem;
-    height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column; /* Default to column for small screens */
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  width: 100%;
+  max-width: 800px;
+  margin: 1rem;
+  height: auto;
+}
+
+img {
+  width: 10rem;
+  height: auto;
+  border-radius: 2rem;
+}
+
+.contact-info img.linkedin {
+  width: 15rem; /* Adjust the size as needed */
+  height: auto;
+}
+
+img:hover {
+  transform: scale(1.1); /* Scale up on hover */
+  transition: 1s;
+}
+
+.input-box input:focus,
+.input-box textarea:focus {
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.8);
+  border: 2px solid rgba(0, 123, 255, 0.8);
+  outline: none;
+}
+
+@keyframes moveBanner {
+  0% {
+    transform: translateX(-30%);
   }
+  50% {
+    transform: translateX(30%);
+  }
+  100% {
+    transform: translateX(-30%);
+  }
+}
+
+.banner {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  animation: moveBanner 10s linear infinite;
+  width: 100%;
+}
+
+.intro-section {
+  opacity: 0;
+  transform: translateX(40px); /* Slide in from the right */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.contact-info {
+  opacity: 0;
+  transform: translateX(-40px); /* Slide in from the left */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.form-section {
+  opacity: 0;
+  transform: translateY(40px); /* Slide in from the bottom */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.intro-section.visible {
+  opacity: 1;
+  transform: translateX(0); /* Reset position */
+}
+
+.contact-info.visible {
+  opacity: 1;
+  transform: translateX(0); /* Reset position */
+}
+
+.form-section.visible {
+  opacity: 1;
+  transform: translateY(0); /* Reset position */
+}

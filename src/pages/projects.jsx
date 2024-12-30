@@ -1,22 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../cssModules/projects.module.css";
 
 const Projects = () => {
     const [expandedCard, setExpandedCard] = useState(null);
 
     const handleCardClick = (cardIndex) => {
-        setExpandedCard(expandedCard === cardIndex ? null : cardIndex);
+        if (expandedCard === cardIndex) {
+            // On mobile, prevent collapsing if already expanded
+            if (window.innerWidth <= 768) {
+                return;
+            }
+            setExpandedCard(null); // Allow collapse for larger screens
+        } else {
+            setExpandedCard(cardIndex);
+        }
     };
 
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(styles.visible);
+                } else {
+                    entry.target.classList.remove(styles.visible);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const elements = document.querySelectorAll(`.${styles.projectCard}`);
+        elements.forEach(element => observer.observe(element));
+
+        return () => {
+            elements.forEach(element => observer.unobserve(element));
+        };
+    }, []);
+
     return (
-        <section id="projects" className='container'>
-             <div className={styles.banner}>
-                <h2>Recent Projects</h2>
+        <section id="projects" className={styles.container}>
+            <div className={styles.banner}>
+                <h2>My Projects</h2>
             </div>
             <div className="row">
-            <div className="col-md-6">
+                <div className="col-md-6">
                     <div 
-                        className={`card mb-3 ${styles.projectCard} ${expandedCard === 2 ? styles.expanded : ""}`} 
+                        className={`card mb-3 ${styles.projectCard} ${expandedCard === 1 ? styles.expanded : ""}`} 
                         onClick={() => handleCardClick(1)}
                     >
                         <img src="/assets/gameExplorer.png" className="card-img-top" alt="Nathan's 1st portfolio" />
@@ -39,7 +66,7 @@ const Projects = () => {
                 <div className="col-md-6">
                     <div 
                         className={`card mb-3 ${styles.projectCard} ${expandedCard === 2 ? styles.expanded : ""}`} 
-                        onClick={() => handleCardClick(1)}
+                        onClick={() => handleCardClick(2)}
                     >
                         <img src="/assets/loginUser.png" className="card-img-top" alt="Blogger Platform API Webserver" />
                         <div className={`card-body ${styles.cardBody}`}>
@@ -57,8 +84,8 @@ const Projects = () => {
                 </div>
                 <div className="col-md-6">
                     <div 
-                        className={`card mb-3 ${styles.projectCard} ${expandedCard === 2 ? styles.expanded : ""}`} 
-                        onClick={() => handleCardClick(1)}
+                        className={`card mb-3 ${styles.projectCard} ${expandedCard === 3 ? styles.expanded : ""}`} 
+                        onClick={() => handleCardClick(3)}
                     >
                         <img src="/assets/rugbyLeague.png" className="card-img-top" alt="Rugby League Results Tracker" />
                         <div className={`card-body ${styles.cardBody}`}>
@@ -76,8 +103,8 @@ const Projects = () => {
                 </div>
                 <div className="col-md-6">
                     <div 
-                        className={`card mb-3 ${styles.projectCard} ${expandedCard === 2 ? styles.expanded : ""}`} 
-                        onClick={() => handleCardClick(1)}
+                        className={`card mb-3 ${styles.projectCard} ${expandedCard === 4 ? styles.expanded : ""}`} 
+                        onClick={() => handleCardClick(4)}
                     >
                         <img src="/assets/portfolioBasic.png" className="card-img-top" alt="Nathan's 1st portfolio" />
                         <div className={`card-body ${styles.cardBody}`}>

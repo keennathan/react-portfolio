@@ -1,14 +1,17 @@
-
 @keyframes moveHeading {
     0% {
-        transform: translateX(-100%);
+        transform: translateX(-52%);
     }
     50% {
-        transform: translateX(100%);
+        transform: translateX(52%);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-52%);
     }
+}
+
+.container {
+    margin: 0rem 2rem 0rem;
 }
 
 .banner {
@@ -27,7 +30,7 @@
 
 .banner h2 {
     display: inline-block;
-    animation: moveHeading 9s linear infinite;
+    animation: moveHeading 6s linear infinite;
     white-space: nowrap; /* Prevent text from wrapping */
 }
 
@@ -38,6 +41,8 @@
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     backdrop-filter: blur(10px); /* Blur effect */
     border-radius: 2rem;
+    opacity: 0;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
 .projectCard img {
@@ -70,6 +75,19 @@
     text-align: center;
 }
 
+.projectCard:nth-child(odd) {
+    transform: translateX(-40px);
+}
+
+.projectCard:nth-child(even) {
+    transform: translateX(40px);
+}
+
+.projectCard.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .projectCard:hover .cardBody {
     opacity: 1;
     position: relative; /* Make sure the content is visible */
@@ -78,10 +96,15 @@
 @media (max-width: 768px) {
     .projectCard {
         height: auto; /* Initial height for mobile */
+        opacity: 1; /* Ensure visibility */
+        transform: translateX(0); /* Initial transform */
+        transition: transform 0.8s ease-in-out; /* Smooth transition */
     }
 
     .projectCard.expanded {
-        height: auto; /* Expand to fit content when clicked */
+        height: auto; 
+        transform: translate(0) !important; 
+        transition: none !important; 
     }
 
     .projectCard .cardBody {
@@ -96,6 +119,6 @@
 
     .projectCard img {
         filter: none;
-        transform: none;
+        transform: none !important; 
     }
 }
