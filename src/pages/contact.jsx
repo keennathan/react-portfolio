@@ -93,7 +93,7 @@ const Contact = () => {
           <img src="assets/LinkedInIcon2.png" alt="LinkedIn Icon" className={styles.linkedin} />
         </a>
         <a href="https://github.com/keennathan" target="_blank" rel="noopener noreferrer">
-          <img src="assets/GitHubIcon2.png" alt="GitHub Icon"/>
+          <img src="assets/GitHubIcon2.png" alt="GitHub Icon" className={styles.github}/>
         </a>
       </div>
       <form ref={form} onSubmit={sendEmail} className={styles['form-section']}>

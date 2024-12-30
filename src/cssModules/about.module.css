@@ -73,6 +73,3 @@
     border-radius: 1rem;
     transition: filter 0.5s ease; /* Smooth transition for the filter effect */
 }
-.pixelated {
-    filter: blur(2px) contrast(0.5); /* Apply the pixelate effect */
-}
