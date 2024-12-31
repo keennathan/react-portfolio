@@ -33,6 +33,7 @@
   backdrop-filter: blur(10px); /* Blur effect */
   width: 90%;
   max-width: 800px;
+  min-width: 22rem;
   margin: 6rem 1rem;
   height: 39rem;
 }
@@ -44,6 +45,7 @@
   align-items: center;
   height: 100%; /* Ensure the text container has a fixed height */
   overflow: hidden; /* Prevent overflow */
+  max-width: 21rem;
 }
 
 .imageContainer {
