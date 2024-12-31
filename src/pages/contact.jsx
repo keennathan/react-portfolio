@@ -27,9 +27,15 @@ const Contact = () => {
     };
   }, []);
 
+  const handleInputChange = () => {
+    setFormStatus("");
+  };
+
   const sendEmail = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setFormStatus("");
+
     const name = form.current.name.value;
     const email = form.current.email.value;
     const message = form.current.message.value;
@@ -40,7 +46,7 @@ const Contact = () => {
       return;
     }
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailPattern.test(email)) {
       setFormStatus("Please enter a valid email address.");
       setIsLoading(false);
@@ -99,15 +105,15 @@ const Contact = () => {
       <form ref={form} onSubmit={sendEmail} className={styles['form-section']}>
         <div className={`mb-3 ${styles['input-box']}`}>
           <label htmlFor="name" className="form-label">Name</label>
-          <input type="text" className="form-control" id="name" name="name" placeholder="Your Name" />
+          <input type="text" className="form-control" id="name" name="name" placeholder="Your Name" onChange={handleInputChange} />
         </div>
         <div className={`mb-3 ${styles['input-box']}`}>
           <label htmlFor="email" className="form-label">Email</label>
-          <input type="email" className="form-control" id="email" name="email" placeholder="Your Email"/>
+          <input type="email" className="form-control" id="email" name="email" placeholder="Your Email" onChange={handleInputChange} />
         </div>
         <div className={`mb-3 ${styles['input-box']}`}>
           <label htmlFor="message" className="form-label">Message</label>
-          <textarea className="form-control" id="message" name="message" rows="3" placeholder="Leave your message here"></textarea>
+          <textarea className="form-control" id="message" name="message" rows="3" placeholder="Leave your message here" onChange={handleInputChange}></textarea>
         </div>
         <button type="submit" className="btn btn-outline-primary" disabled={isLoading}>
           {isLoading ? "Submitting..." : "Submit"}

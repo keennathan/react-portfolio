@@ -63,7 +63,7 @@ const About = () => {
                     <h2>More About Me:</h2>
                     <p>When I'm not coding, I enjoy exploring new technologies, refining my skills, and staying up-to-date with industry trends. My diverse professional background has instilled in me a strong work ethic, attention to detail, and the ability to thrive under pressure.</p>
                 </div>
-                <a href="public/assets/Resume Nathan Keen.pdf" className="btn btn-outline-primary mt-3" target="_blank" rel="noopener">My Resume</a>
+                <a href="assets/Resume Nathan Keen.pdf" className="btn btn-outline-primary mt-3" target="_blank" rel="noopener">My Resume</a>
             </div>
         </section>
     );
