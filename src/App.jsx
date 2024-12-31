@@ -6,6 +6,7 @@ import Home from './pages/home'
 import About from './pages/about'
 import Projects from './pages/projects'
 import Contact from './pages/contact'
+import Footer from './components/footer'
 
 
 
@@ -46,7 +47,9 @@ function App() {
         <div id="contact" className='section'>
           <Contact />
         </div>
+        <Footer />
       </div>
+      
     </Router>
   );
 }

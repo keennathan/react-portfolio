@@ -36,8 +36,8 @@
 }
 .nav-link {
   cursor: pointer;
-  font-size: 1.25rem; /* Increase font size */
-    padding: 0.75rem 1rem; /* Increase padding */
+  font-size: 1.25rem;
+    padding: 0.75rem 1rem;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -45,4 +45,22 @@
   
   border-radius: 1rem;
   color: #fff;
+}
+footer {
+  position: sticky;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+.social-icon {
+  width: 2rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
 }
