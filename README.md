@@ -8,8 +8,6 @@ Welcome to the my Portfolio website! This is a personal portfolio website showca
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Scripts](#scripts)
 - [Contact](#contact)
 
 ## Introduction
