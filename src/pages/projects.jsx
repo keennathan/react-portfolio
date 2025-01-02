@@ -138,7 +138,7 @@ const Projects = () => {
                 </div>
             </div>
             {/* Link to GitHub repository for this website */}
-            <div className="text-center mt-5">
+            <div className="text-center mt-2 mb-3">
                 <a href="https://github.com/keennathan/react-portfolio" className="btn btn-outline-primary" target="_blank">View Code for This Website</a>
             </div>
         </section>
