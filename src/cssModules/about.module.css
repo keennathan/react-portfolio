@@ -1,3 +1,4 @@
+/* Container styling for the about section */
 .container {
     display: flex;
     align-items: center;
@@ -17,6 +18,7 @@
     margin: 1rem;
     height: auto;
   }
+  /* Keyframes for moving the banner text back and forth */
   @keyframes moveBanner {
     0% {
         transform: translateX(-30%);
@@ -28,6 +30,8 @@
         transform: translateX(-30%);
     }
     }
+
+/* Banner styling for the about section */    
 .banner{
     padding-top: 1.5rem;
     animation: moveBanner 10s linear infinite;
@@ -37,15 +41,20 @@
     left: 0;
     width: 100%;
 }
+/* Content styling for the about section */
 .content{
     padding: 1rem .5rem 1rem;
 }
+
+/* Initial state for the introduction section: hidden and slid in from the right */
 .introduction {
     padding-top: 3rem;
     opacity: 0;
     transform: translateX(40px);
     transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
+
+/* Initial state for the skills section: hidden and slid in from the bottom */
 .skills {
     padding-top: 3rem;
     opacity: 0;
@@ -53,6 +62,7 @@
     transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
+/* Initial state for the more about me section: hidden and slid in from the right */
 .moreAboutMe {
     padding-top: 3rem;
     opacity: 0;
@@ -60,13 +70,15 @@
     transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
+/* Visible state for the introduction, skills, and more about me sections: fully visible and reset position */
 .introduction.visible,
 .skills.visible,
 .moreAboutMe.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0);/* Reset position */
 }
 
+/* Styling for the about section image */
 .aboutImage{
     width: 100%;
     height: auto;

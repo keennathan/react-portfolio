@@ -1,66 +1,77 @@
+/* Container for the background elements */
 .background-container {
     position: relative;
     width: 100%;
     height: auto;
-    overflow:auto;
-  }
-  
-  .background-video {
+    overflow: auto;
+}
+
+/* Styling for the background video to cover the entire viewport */
+.background-video {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
-  }
+    z-index: -1; /* Ensure the video is behind other elements */
+}
 
+/* General section styling to center content vertically and horizontally */
 .section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.navbar-nav .nav-item {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-  background-color: black;
-  margin-bottom: auto;
-}
-.nav-link {
-  cursor: pointer;
-  font-size: 1.25rem;
-    padding: 0.75rem 1rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.nav-link:hover {
-  
-  border-radius: 1rem;
-  color: #fff;
+/* Navbar item spacing */
+.navbar-nav .nav-item {
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
+
+/* Navbar styling to fix it at the top and give it a background color */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Ensure the navbar is above other elements */
+    background-color: black;
+    margin-bottom: auto;
+}
+
+/* Styling for navigation links */
+.nav-link {
+    cursor: pointer;
+    font-size: 1.25rem;
+    padding: 0.75rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for navigation links */
+.nav-link:hover {
+    border-radius: 1rem;
+    color: #fff;
+}
+
+/* Footer styling to stick it at the bottom */
 footer {
-  position: sticky;
-  width: 100%;
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding: 2rem;
+    position: sticky;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 2rem;
 }
 .social-icon {
-  width: 2rem;
-  margin-right: 1rem;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
+    width: 2rem;
+    margin-right: 1rem;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
 }
 
 .social-icon:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }

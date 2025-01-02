@@ -1,7 +1,15 @@
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 
+/**
+ * Navbar component for the portfolio website.
+ * Provides navigation links to different sections of the page.
+ */
 const Navbar = () => {
+    /**
+     * Handles the click event on navigation links.
+     * Collapses the navbar if it is currently expanded.
+     */
     const handleNavLinkClick = () => {
         const navbarCollapse = document.getElementById('navbarNav');
         if (navbarCollapse.classList.contains('show')) {
@@ -28,7 +36,7 @@ const Navbar = () => {
                                 duration={500} 
                                 className="nav-link"
                                 onClick={handleNavLinkClick}
-                                offset={-70} /* Adjust this value to match the height of your navbar */
+                                offset={-70} 
                             >
                                 Home
                             </ScrollLink>
@@ -40,7 +48,7 @@ const Navbar = () => {
                                 duration={500} 
                                 className="nav-link"
                                 onClick={handleNavLinkClick}
-                                offset={-70} /* Adjust this value to match the height of your navbar */
+                                offset={-70} 
                             >
                                 About
                             </ScrollLink>
@@ -52,7 +60,7 @@ const Navbar = () => {
                                 duration={500} 
                                 className="nav-link"
                                 onClick={handleNavLinkClick}
-                                offset={-70} /* Adjust this value to match the height of your navbar */
+                                offset={-70} 
                             >
                                 Projects
                             </ScrollLink>
@@ -64,7 +72,7 @@ const Navbar = () => {
                                 duration={500} 
                                 className="nav-link"
                                 onClick={handleNavLinkClick}
-                                offset={-70} /* Adjust this value to match the height of your navbar */
+                                offset={-70} 
                             >
                                 Contact
                             </ScrollLink>

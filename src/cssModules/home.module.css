@@ -1,53 +1,59 @@
+/* Styling for the profile image */
 .profileImage {
-  width: 15rem; /* Make the image take up the full width of its container */
+  width: 15rem; /* Set the width of the image */
   height: auto; /* Maintain aspect ratio */
-  border: 1px solid white;
-  border-radius: 50%;
+  border: 1px solid white; /* White border around the image */
+  border-radius: 50%; /* Make the image circular */
   margin-bottom: 1rem; /* Add some space below the image */
-  vertical-align: middle;
+  vertical-align: middle; /* Align the image vertically in the middle */
 }
+
+/* Keyframes for sliding in the content from the left */
 @keyframes slideInFromLeft {
   0% {
-    transform: translateX(-100%);
-    opacity: 0;
+    transform: translateX(-100%); /* Start off-screen to the left */
+    opacity: 0; /* Start with no opacity */
   }
   100% {
-    transform: translateX(0);
-    opacity: 1;
+    transform: translateX(0); /* End at the original position */
+    opacity: 1; /* End with full opacity */
   }
 }
 
+/* Container styling for the home content */
 .content {
   display: flex;
   align-items: center;
   flex-direction: column; /* Default to column for small screens */
   position: relative;
   z-index: 1;
-  color: white;
-  text-align: center;
-  margin-top: 2rem;
-  padding: auto;
-  border-radius: 2rem;
+  color: white; /* Text color */
+  text-align: center; /* Center-align text */
+  margin-top: 2rem; /* Top margin */
+  padding: auto; /* Auto padding */
+  border-radius: 2rem; /* Rounded corners */
   border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   backdrop-filter: blur(10px); /* Blur effect */
-  width: 90%;
-  max-width: 800px;
-  min-width: 22rem;
-  margin: 6rem 1rem;
-  height: 39rem;
+  width: 90%; /* Width of the container */
+  max-width: 800px; /* Maximum width */
+  min-width: 22rem; /* Minimum width */
+  margin: 6rem 1rem; /* Margin around the container */
+  height: 39rem; /* Fixed height */
 }
 
+/* Styling for the text container */
 .textContainer {
   flex: 1; /* Each container takes up 50% of the parent */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Center-align content horizontally */
+  align-items: center; /* Center-align content vertically */
   height: 100%; /* Ensure the text container has a fixed height */
   overflow: hidden; /* Prevent overflow */
-  max-width: 21rem;
+  max-width: 21rem; /* Maximum width */
 }
 
+/* Styling for the image container */
 .imageContainer {
   padding-top: 3rem;
   flex: 1; /* Each container takes up 50% of the parent */
@@ -58,6 +64,7 @@
   animation: slideInFromLeft 2s ease-out; /* Apply the animation */
 }
 
+/* Media query for screens wider than 768px */
 @media (min-width: 768px) {
   .content {
     flex-direction: row; /* Change to row for larger screens */
@@ -71,6 +78,7 @@
   }
 }
 
+/* Media query for screens wider than 1024px */
 @media (min-width: 1024px) {
   .content {
     padding: 4rem;

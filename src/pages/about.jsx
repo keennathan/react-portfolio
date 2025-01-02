@@ -1,14 +1,30 @@
 import React, { useEffect } from "react";
 import styles from "../cssModules/about.module.css";
 
+/**
+ * About component displays the about section of the portfolio.
+ * It includes an introduction, skills overview, and additional information about the developer.
+ */
 const About = () => {
+    /**
+     * Handles mouse enter event to add pixelated effect to the image.
+     * @param {Event} e - The mouse enter event.
+     */
     const handleMouseEnter = (e) => {
         e.target.classList.add(styles.pixelated);
     }
+    /**
+     * Handles mouse leave event to remove pixelated effect from the image.
+     * @param {Event} e - The mouse leave event.
+     */
     const handleMouseLeave = (e) => {
         e.target.classList.remove(styles.pixelated);
     }
 
+    /**
+     * useEffect hook to add intersection observer for about sections.
+     * Adds 'visible' class when the section is in the viewport.
+     */
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -41,6 +57,7 @@ const About = () => {
                         alt="computer phones on tech background" 
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
+                        loading="lazy"
                     />
                 </div>
 
@@ -56,6 +73,7 @@ const About = () => {
                         alt="" 
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
+                        loading="lazy"
                     />
                 </div> 
 

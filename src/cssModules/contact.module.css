@@ -1,3 +1,4 @@
+/* Container styling for the contact section */
 .container {
   display: flex;
   align-items: center;
@@ -18,22 +19,26 @@
   height: auto;
 }
 
+/* Styling for GitHub image in contact info */
 .contact-info img.github {
   width: 10rem;
   height: auto;
   border-radius: 2rem;
 }
 
+/* Styling for LinkedIn image in contact info */
 .contact-info img.linkedin {
   width: 15.5rem; /* Adjust the size as needed */
   height: auto;
 }
 
+/* Hover effect for images in contact info */
 .contact-info img:hover {
   transform: scale(1.1); /* Scale up on hover */
   transition: 1s;
 }
 
+/* Focus effect for input fields and textareas */
 .input-box input:focus,
 .input-box textarea:focus {
   box-shadow: 0 8px 16px rgba(0, 123, 255, 0.8);
@@ -41,6 +46,7 @@
   outline: none;
 }
 
+/* Keyframes for moving the banner text back and forth */
 @keyframes moveBanner {
   0% {
     transform: translateX(-30%);
@@ -53,6 +59,7 @@
   }
 }
 
+/* Banner styling for the contact section */
 .banner {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -60,29 +67,34 @@
   width: 100%;
 }
 
+/* Initial state for the intro section: hidden and slid in from the right */
 .intro-section {
   opacity: 0;
   transform: translateX(40px); /* Slide in from the right */
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
+/* Initial state for the contact info section: hidden and slid in from the left */
 .contact-info {
   opacity: 0;
   transform: translateX(-40px); /* Slide in from the left */
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
+/* Initial state for the form section: hidden and slid in from the bottom */
 .form-section {
   opacity: 0;
   transform: translateY(40px); /* Slide in from the bottom */
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
+/* Visible state for the intro section: fully visible and reset position */
 .intro-section.visible {
   opacity: 1;
   transform: translateX(0); /* Reset position */
 }
 
+/* Visible state for the contact info section: fully visible and reset position */
 .contact-info.visible {
   opacity: 1;
   transform: translateX(0); /* Reset position */

@@ -3,11 +3,19 @@ import styles from "../cssModules/contact.module.css";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
 
+/**
+ * Contact component displays the contact form and handles form submission.
+ * It includes email validation and sending the email using EmailJS.
+ */
 const Contact = () => {
   const form = useRef();
   const [formStatus, setFormStatus] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  /**
+   * useEffect hook to add intersection observer for contact sections.
+   * Adds 'visible' class when the section is in the viewport.
+   */
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -27,11 +35,19 @@ const Contact = () => {
     };
   }, []);
 
+  /**
+   * Handles input change event to reset form status.
+   */
   const handleInputChange = () => {
     setFormStatus("");
   };
 
-  const sendEmail = async (e) => {
+  /**
+   * Handles form submission.
+   * Validates the email address and sends the email using EmailJS.
+   * @param {Event} e - The form submission event.
+   */
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setFormStatus("");
@@ -40,12 +56,14 @@ const Contact = () => {
     const email = form.current.email.value;
     const message = form.current.message.value;
 
+    // Validate form fields
     if (!name || !email || !message) {
       setFormStatus("Please fill out all fields.");
       setIsLoading(false);
       return;
     }
 
+     // Validate email format
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailPattern.test(email)) {
       setFormStatus("Please enter a valid email address.");
@@ -54,6 +72,7 @@ const Contact = () => {
     }
 
     try {
+      // Validate email using Abstract API
       const response = await axios.get(`https://emailvalidation.abstractapi.com/v1/?api_key=${import.meta.env.VITE_ABSTRACT_API_KEY}&email=${email}`);
       if (!response.data.is_valid_format.value || !response.data.is_smtp_valid.value) {
         setFormStatus("Please enter a valid email address.");
@@ -67,6 +86,7 @@ const Contact = () => {
       return;
     }
 
+    // Send email using EmailJS
     emailjs.sendForm(
       import.meta.env.VITE_EMAILJS_SERVICE_ID,
       import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
@@ -102,7 +122,7 @@ const Contact = () => {
           <img src="assets/GitHubIcon2.png" alt="GitHub Icon" className={styles.github}/>
         </a>
       </div>
-      <form ref={form} onSubmit={sendEmail} className={styles['form-section']}>
+      <form ref={form} onSubmit={handleSubmit} className={styles['form-section']}>
         <div className={`mb-3 ${styles['input-box']}`}>
           <label htmlFor="name" className="form-label">Name</label>
           <input type="text" className="form-control" id="name" name="name" placeholder="Your Name" onChange={handleInputChange} />

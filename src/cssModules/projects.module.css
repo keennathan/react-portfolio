@@ -1,3 +1,4 @@
+/* Keyframes for moving the heading text back and forth */
 @keyframes moveHeading {
     0% {
         transform: translateX(-52%);
@@ -10,11 +11,13 @@
     }
 }
 
+/* Container styling for the projects section */
 .container {
     margin: 0rem 2rem 0rem;
-    max-width: 800px
+    max-width: 800px;
 }
 
+/* Banner styling for the projects section */
 .banner {
     color: white;
     background-color: blue;
@@ -29,12 +32,14 @@
     overflow: hidden;
 }
 
+/* Heading styling within the banner */
 .banner h2 {
     display: inline-block;
     animation: moveHeading 6s linear infinite;
     white-space: nowrap; /* Prevent text from wrapping */
 }
 
+/* Styling for individual project cards */
 .projectCard {
     position: relative;
     overflow: hidden;
@@ -46,20 +51,24 @@
     transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
+/* Styling for images within project cards */
 .projectCard img {
     transition: transform 2s ease;
     height: 18rem;
 }
 
+/* Hover effect for project cards */
 .projectCard:hover {
     height: auto;
 }
 
+/* Hover effect for images within project cards */
 .projectCard:hover img {
     transform: scale(1.1);
     filter: blur(1px);
 }
 
+/* Styling for the card body */
 .cardBody {
     position: absolute;
     top: 0;
@@ -76,19 +85,23 @@
     text-align: center;
 }
 
+/* Initial transform for odd project cards */
 .projectCard:nth-child(odd) {
     transform: translateX(-40px);
 }
 
+/* Initial transform for even project cards */
 .projectCard:nth-child(even) {
     transform: translateX(40px);
 }
 
+/* Visible state for project cards */
 .projectCard.visible {
     opacity: 1;
     transform: translateX(0);
 }
 
+/* Hover effect for the card body */
 .projectCard:hover .cardBody {
     opacity: 1;
     position: relative; /* Make sure the content is visible */
